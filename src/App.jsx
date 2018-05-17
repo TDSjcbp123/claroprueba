@@ -9,6 +9,7 @@ export default class App extends Component {
         <SearchBar brand="MovieBox" searchText={''} />
         {this.props.children}
       </div>
-    );
+
+      );
   }
 }

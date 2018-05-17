@@ -16,7 +16,7 @@ export default function Poster(props){
   `;
   const Info =  styled.div`
       position: absolute;
-      top: 75%;
+      top: 60%;
       margin:10px;
       color:white;
       font-weight:bold;
@@ -24,11 +24,10 @@ export default function Poster(props){
   `;
   return(
     <StyledImg>
-      <Image className="image" key={props.id} src={URL_IMG+IMG_SIZE_LARGE+props.path} responsive />
+      <Image className="Item" key={props.id} src={URL_IMG+IMG_SIZE_LARGE+props.path} responsive />
       {props.info &&
       <Info className="title">
         <h4>{props.title}</h4>
-        <Glyphicon glyph={'star'} /> {props.voteAverage} &nbsp;&nbsp; {props.release_date.substring(0,4)}
       </Info>
       }
     </StyledImg>

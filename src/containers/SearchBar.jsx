@@ -4,6 +4,7 @@ import TMDBlogo from '../images/clarovideo-logo-sitio.svg'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import Autosuggest from 'react-autosuggest'
+import '../components/app.css'
 import { URL_SEARCH, API_KEY_ALT, URL_IMG, IMG_SIZE_XSMALL} from '../const';
 
 class SearchBar extends Component {
@@ -72,6 +73,7 @@ class SearchBar extends Component {
     });
   };
 
+
   renderSuggestion = (suggestion) => {
     return (
       <a>
@@ -104,9 +106,13 @@ class SearchBar extends Component {
     height: '400%',
     width: '300px',
     paddingLeft: '10px',
-    marginTop: '-8px',
-    display: 'inline-block'
+    display: 'inline-block',
+    color: 'black'
   };
+
+  const navbarStyle = {
+      background: 'black'
+  }
 
   const {value, suggestions} = this.state;
   const inputProps = {
@@ -117,10 +123,10 @@ class SearchBar extends Component {
   };
 
   return (
-    <Navbar bsStyle='inverse'>
+    <Navbar bsStyle='cool' >
       <Navbar.Header>
         <Navbar.Brand>
-          <a href="#"><span style={brandStyle}></span><Image style={imgStyle} src={TMDBlogo}/></a>
+          <a href="#"><span style={brandStyle}></span><img className="Logo" src={TMDBlogo}/></a>
         </Navbar.Brand>
       </Navbar.Header>
       <Navbar.Form pullRight>
@@ -134,6 +140,7 @@ class SearchBar extends Component {
           inputProps={inputProps} />
       </Navbar.Form>
     </Navbar>
+
   );
 
   }
